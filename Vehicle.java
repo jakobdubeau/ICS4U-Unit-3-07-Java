@@ -1,0 +1,109 @@
+/*
+* Vehicles.
+*
+* @author  Jakob
+* @version 1.0
+* @since   2020-12-07
+*/
+
+/**
+* Vehicle class.
+*/
+public class Vehicle {
+
+    /**
+    * Colour.
+    */
+    private String colour;
+
+    /**
+    * Speed.
+    */
+    private int speed;
+
+    /**
+    * Max Speed.
+    */
+    private int maxSpeed;
+
+    /**
+    * Initial values.
+    *
+    * @param startColour colour
+    * @param vehicleMaxSpeed speed
+    */
+
+    public Vehicle(final String startColour, final int vehicleMaxSpeed) {
+
+        this.colour = startColour;
+
+        this.speed = 0;
+
+        this.maxSpeed = vehicleMaxSpeed;
+    }
+
+    /**
+    * Getter.
+    *
+    * @return return
+    */
+    public String getColour() {
+        return this.colour;
+    }
+
+    /**
+    * Getter.
+    *
+    * @return return
+    */
+    public int getMaxSpeed() {
+        return this.maxSpeed;
+    }
+
+    /**
+    * Getter.
+    *
+    * @return return
+    */
+    public int getSpeed() {
+        return this.speed;
+    }
+    /**
+    * Setter.
+    *
+    * @param someColour Colour
+    */
+
+    public void setColour(String someColour) {
+        this.colour = someColour;
+    }
+
+    /**
+    * Accelerates.
+    *
+    * @param acceleration acceleration.
+    */
+    public void accelerate(final int acceleration) {
+        if (acceleration + speed > maxSpeed) {
+            System.out.println("\nCannot accelerate more"
+                + " than the maximum speed.");
+        }
+        else {
+            speed = speed + acceleration;
+        }
+    }
+
+    /**
+    * Applies brakes to a car.
+    *
+    * @param brakes the amount to which the speed will be reduced
+    */
+    public void brake(final int brakes) {
+        if (brakes > speed) {
+            System.out.println("\nCannot brake more than the current speed.");
+        }
+        else {
+            speed = speed - brakes;
+        }
+    }
+}
